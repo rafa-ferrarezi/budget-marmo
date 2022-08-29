@@ -1,3 +1,4 @@
+// Arredondar valor
 function arredondar(valor) {
   return Math.round(valor * 100) / 100
 }
@@ -9,6 +10,15 @@ let show = document.querySelector('.display')
 let tabela = document.querySelector('.tabela')
 
 show.innerHTML = teste
+// exemplos:
+// uma bancada da cozinha de 200 por 60 no granito preto com acabamento meia esquadria com saia de 10cm e frontao, com colagem da cuba tramontina numero 2
+// quantidade, tipo, ambiente, tamanho(comprimente, largura), material(nome, tipo, valor), acabamento(tipo, tamanhoSaia, valor), frontao(temOuNaoTem, alturaFrontao, temRebaixo, quantidadeRebaixo, valorRebaixo), colagem(simouNao, quantidadeColagem, Valor), cuba(simouNao, quantidade, nome, marca)
+
+// bancada da area de lazer no granito verde com acabamento simples de 4cm e frontao de 15cm, com colagem da cuba tramontina e corte do cooktop
+
+class Produto {
+  constructor(nome, tipo, acabamento) {}
+}
 
 // Inicio do app
 
