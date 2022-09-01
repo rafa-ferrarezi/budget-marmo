@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>BUDGET MARMO V1.0</title>
+</head>
+
+<body>
+  <nav class="navbar sticky-top navbar-dark bg-primary navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">BUDGET MARMO V1.0</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Budget Marmo</h1>
+    <h2>Orçamento Bancada da Pia:</h2>
+    <p>Para fazer o orçamento digite as medidas no campo a baixo e click no botao calcular</p>
+
+    <form class="m-5">
+      <div class="form-row align-items-center">
+        <input id="comprimento" type="number" placeholder="Comprimento" class="col" />
+        <input id="largura" type="number" placeholder="Largura" class="col" />
+        <input id="alturaSa" type="number" placeholder="Altura da Saia" class="col" />
+        <input id="alturaFro" type="number" placeholder="Altura do Frontão" class="col" />
+
+      </div>
+  </div>
+  <button id="botao" onclick="adicionarLancamento();" class="btn btn-primary btn-lg mb-5">Calcular</button>
+  </form>
+  <h2>Bancada da Pia no Granito Preto São Gabriel de 200x60</h2>
+  <h2>com acabamento 1/2 Esquadria com saia de 10cm e frontão de
+    15cm</h2>
+  <div class="display m-5">
+    <table class="table table-striped table-bordered tabela">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Material</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">QT</th>
+          <th scope="col">Comprimento</th>
+          <th scope="col">Largura</th>
+          <th scope="col">Área</th>
+          <th scope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>BANCADA DA PIA</td>
+          <td>1</td>
+          <td>2,00</td>
+          <td>0,60</td>
+          <td>1,20</td>
+          <td>R$ 732,00</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>COLAGEM CUBA</td>
+          <td>1</td>
+          <td>1</td>
+          <td>-</td>
+          <td>-</td>
+          <td>R$ 80,00</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>FAIXA</td>
+          <td>1</td>
+          <td>7,80</td>
+          <td>0,05</td>
+          <td>0,39</td>
+          <td>R$ 237,90</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>SAIA</td>
+          <td>1</td>
+          <td>2,60</td>
+          <td>0,10</td>
+          <td>0,26</td>
+          <td>R$ 158,60</td>
+        </tr>
+        <tr>
+          <th scope="row">5</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>1/2 ESQUADRIA</td>
+          <td>1</td>
+          <td>2,60</td>
+          <td>-</td>
+          <td>-</td>
+          <td>R$ 202,80</td>
+        </tr>
+
+        <tr>
+          <th scope="row">6</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>FRONTÃO</td>
+          <td>1</td>
+          <td>2,60</td>
+          <td>0,15</td>
+          <td>0,39</td>
+          <td>R$ 237,90</td>
+        <tr>
+          <th scope="row">7</th>
+          <td>GRANITO PRETO SÃO GABRIEL</td>
+          <td>REBAIXO</td>
+          <td>1</td>
+          <td>2,60</td>
+          <td>-</td>
+          <td>-</td>
+          <td>R$ 109,20</td>
+        </tr>
+        </tr>
+      </tbody>
+    </table>
+    <h2 class="d-flex flex-row-reverse bd-highlight p-4 font-weight-bold  ">TOTAL: R$ 1.758,40</h2>
+
+
+  </div>
+  </div>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <!-- <script src="./main.js"></script> -->
+</body>
+
+</html>
