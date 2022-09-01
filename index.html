@@ -22,9 +22,25 @@
     <div class="container">
       <h1>Budget Marmo</h1>
       <h2>Info:</h2>
+      <div class="container">
+        <form>
+            <div id="form-orcamento" class="form-group" >
+            <input id="comprimento" type="number" placeholder="Comprimento" />
+            <input id="largura" type="number" placeholder="Largura" />
+            <input id="alturaSa" type="number" placeholder="Altura da Saia" />
+            <input
+            id="alturaFro"
+            type="number"
+            placeholder="Altura do Frontão"
+            />
+            <br /><br />
+          </form>
+            <button id="botao"  onclick="adicionarLancamento();" class="btn btn-primary btn-lg">Calcular</button>
+        </div>
+      </div>
       <div class="display"></div>
       <div class="container">
-        <table class="table table-striped tabela">
+        <table class="table table-striped tabela" >
           <thead class="thead-dark">
             <tr>
               <th scope="col">Item</th>

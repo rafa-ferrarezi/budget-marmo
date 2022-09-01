@@ -3,70 +3,79 @@ function arredondar(valor) {
   return Math.round(valor * 100) / 100
 }
 
-let teste = '<p>Bancada da Cuba de Cozinha de 200x60 </p>'
-
 let show = document.querySelector('.display')
-
 let tabela = document.querySelector('.tabela')
-
-show.innerHTML = teste
-// exemplos:
-// uma bancada da cozinha de 200 por 60 no granito preto com acabamento meia esquadria com saia de 10cm e frontao, com colagem da cuba tramontina numero 2
-// quantidade, tipo, ambiente, tamanho(comprimente, largura), material(nome, tipo, valor), acabamento(tipo, tamanhoSaia, valor), frontao(temOuNaoTem, alturaFrontao, temRebaixo, quantidadeRebaixo, valorRebaixo), colagem(simouNao, quantidadeColagem, Valor), cuba(simouNao, quantidade, nome, marca)
-
-// bancada da area de lazer no granito verde com acabamento simples de 4cm e frontao de 15cm, com colagem da cuba tramontina e corte do cooktop
-
-class Produto {
-  constructor(nome, tipo, acabamento) {}
-}
 
 // Inicio do app
 
-let comprimentoBancada = 3
-let larguraBancada = 0.62
-let alturaSaia = 0.1
-let larguraFaixa = 0.05
-let alturaFrontao = 0.15
+let comprimentoBancada
+let larguraBancada
+let alturaSaia
+let larguraFaixa
+let alturaFrontao
 
-let quantidadeTampo = arredondar(comprimentoBancada * larguraBancada)
+function adicionarLancamento() {
+  const comprimento1 = parseFloat(document.getElementById('comprimento').value)
+  const largura1 = parseFloat(document.getElementById('largura').value)
+  const alturasaia1 = parseFloat(document.getElementById('alturaSa').value)
+  const alturafrontao1 = parseFloat(document.getElementById('alturaFro').value)
+  comprimentoBancada = comprimento1 / 100
+  larguraBancada = largura1 / 100
+  alturaSaia = alturasaia1 / 100
+  alturaFrontao = alturafrontao1 / 100
+  const quantidadeTampo = comprimentoBancada * larguraBancada
+  console.log(quantidadeTampo)
+}
 
-tabela.innerHTML +=
-  '<th scope="row">1</th><td> Tampo: </td> <td> ' + quantidadeTampo + '</td>'
+// let tabela = document.querySelector('.tabela')
+// const teste = `<h2>Bancada de ${comprimentoBancada}x${larguraBancada} com Saia de ${alturaSaia} e com Frontão de ${alturaFrontao} </h2>`
 
-let faixaEngrosso = arredondar(
-  (3 * comprimentoBancada + 3 * larguraBancada) * larguraFaixa
-)
+// show.innerHTML = teste
 
-tabela.innerHTML +=
-  '<th scope="row">2</th><td> Faixa: </td> <td> ' + faixaEngrosso + '</td>'
+// tabela.innerHTML +=
+//   '<th scope="row">1</th><td> Tampo: </td> <td> ' + quantidadeTampo + '</td>'
+// let faixaEngrosso = arredondar(
+//   (3 * comprimentoBancada + 3 * larguraBancada) * larguraFaixa
+// )
 
-let saiaBancada = arredondar((comprimentoBancada + larguraBancada) * alturaSaia)
+// tabela.innerHTML +=
+//   '<th scope="row">2</th><td> Faixa: </td> <td> ' + faixaEngrosso + '</td>'
 
-tabela.innerHTML +=
-  '<th scope="row">3</th><td> Saia: </td> <td> ' + saiaBancada + '</td>'
+// let saiaBancada = arredondar(
+//   (comprimentoBancada + larguraBancada) * alturaSaia
+// )
 
-let meiaEsquadria = arredondar(saiaBancada / alturaSaia)
+// tabela.innerHTML +=
+//   '<th scope="row">3</th><td> Saia: </td> <td> ' + saiaBancada + '</td>'
 
-tabela.innerHTML +=
-  '<th scope="row">4</th><td> Meia Esquadria: </td> <td> ' +
-  meiaEsquadria +
-  '</td>'
+// let meiaEsquadria = arredondar(saiaBancada / alturaSaia)
 
-let frontaoBancada = arredondar(meiaEsquadria * alturaFrontao)
+// tabela.innerHTML +=
+//   '<th scope="row">4</th><td> Meia Esquadria: </td> <td> ' +
+//   meiaEsquadria +
+//   '</td>'
 
-tabela.innerHTML +=
-  '<th scope="row">5</th><td> Frontão: </td> <td> ' + frontaoBancada + '</td>'
+// let frontaoBancada = arredondar(meiaEsquadria * alturaFrontao)
 
-let rebaixoFrontao = arredondar(frontaoBancada / alturaFrontao)
+// tabela.innerHTML +=
+//   '<th scope="row">5</th><td> Frontão: </td> <td> ' + frontaoBancada + '</td>'
 
-tabela.innerHTML +=
-  '<th scope="row">6</th><td> Rebaixo: </td> <td> ' + rebaixoFrontao + '</td>'
+// let rebaixoFrontao = arredondar(frontaoBancada / alturaFrontao)
 
-let totalMaterial = arredondar(
-  quantidadeTampo + faixaEngrosso + saiaBancada + frontaoBancada
-)
+// tabela.innerHTML +=
+//   '<th scope="row">6</th><td> Rebaixo: </td> <td> ' + rebaixoFrontao + '</td>'
 
-tabela.innerHTML +=
-  '<th scope="row">#</th><td> Total de material: </td> <td> ' +
-  totalMaterial +
-  ' m² </td>'
+// let totalMaterial = arredondar(
+//   quantidadeTampo + faixaEngrosso + saiaBancada + frontaoBancada
+// )
+
+// tabela.innerHTML +=
+//   '<th scope="row">#</th><td> Total de material: </td> <td> ' +
+//   totalMaterial +
+//   ' m² </td>'
+// console.log(m)
+// return quantidadeTampo
+
+// const botao = document.getElementById('botao')
+// botao.addEventListener('click', adicionarLancamento)
+// stop
