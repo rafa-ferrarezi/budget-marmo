@@ -61,3 +61,7 @@ h1 {
   height: 3.5rem;
   max-width: 20%;
 }
+
+.table {
+  font-size: calc(0.5em + 0.2vw);
+}
