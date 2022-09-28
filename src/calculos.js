@@ -4,7 +4,7 @@ const display = document.getElementById('display')
 
 // Arredondar valor
 function arredondar(valor) {
-  return Math.round(valor * 100) / 100
+  return Math.round((valor * 100) / 100)
 }
 
 // Add elementos
@@ -108,10 +108,22 @@ class AcabamentoFrontao {
     this.totalFrontao = totalFrontao
   }
 }
-function bancadaComDoisLados() {
+document.getElementById('botao').addEventListener('click', calcular)
+
+function calcular() {
+  if (display.firstChild) {
+    display.firstChild.remove()
+  }
+
+  const material = document.getElementById('material').value
+  const preco = document.getElementById('preco').value
+  const comprimento = document.getElementById('comprimento').value
+  const largura = document.getElementById('largura').value
+
+  // console.log(material, preco, comprimento, largura)
   //materia prima
-  materialBancada = 'Granito Preto São Gabriel'
-  precoMaterial = 610
+  materialBancada = material
+  precoMaterial = preco
 
   //info da bancada em m
   nomeBancada = 'Bancada da Pia'
@@ -123,6 +135,9 @@ function bancadaComDoisLados() {
   nomeAcabamentoSaia = '1/2 Esquadria'
   nomeAcabamentoFrontao = 'Rebaixo'
 
+  return bancadaComDoisLados(), console.log('Clicado')
+}
+function bancadaComDoisLados() {
   //preco dos acabamentos
   precoMeiaEsquadria = 78
   precoRebaixo = 42
@@ -212,7 +227,7 @@ function bancadaComDoisLados() {
   tabelaOrcamento.appendChild(linhaBancada)
 
   const linhaFaixa = document.createElement('tr')
-  addElement(linhaFaixa, 'td', materialBancada)
+  addElement(linhaFaixa, 'tH', materialBancada)
   addElement(linhaFaixa, 'td', 'Faixa')
   addElement(linhaFaixa, 'td', comprimentoFaixa)
   addElement(linhaFaixa, 'td', larguraFaixa)
@@ -227,7 +242,7 @@ function bancadaComDoisLados() {
   tabelaOrcamento.appendChild(linhaFaixa)
 
   const linhaSaia = document.createElement('tr')
-  addElement(linhaSaia, 'td', materialBancada)
+  addElement(linhaSaia, 'tH', materialBancada)
   addElement(linhaSaia, 'td', 'Saia')
   addElement(linhaSaia, 'td', comprimentoSaia)
   addElement(linhaSaia, 'td', alturaSaia)
@@ -242,8 +257,8 @@ function bancadaComDoisLados() {
   tabelaOrcamento.appendChild(linhaSaia)
 
   const linhaFrontao = document.createElement('tr')
-  addElement(linhaFrontao, 'td', materialBancada)
-  addElement(linhaFrontao, 'td', 'Frontao')
+  addElement(linhaFrontao, 'tH', materialBancada)
+  addElement(linhaFrontao, 'td', 'Frontão')
   addElement(linhaFrontao, 'td', comprimentoFrontao)
   addElement(linhaFrontao, 'td', alturaFrontao)
   addElement(linhaFrontao, 'td', metrosFrontao)
@@ -256,50 +271,9 @@ function bancadaComDoisLados() {
   addElement(linhaFrontao, 'td', formatarDinheiro(totalFrontao))
   tabelaOrcamento.appendChild(linhaFrontao)
 
-  display.appendChild(tabelaOrcamento)
   const mostraTotal = document.createElement('div')
   addElement(mostraTotal, 'h1', 'Total da Bancada: ')
   addElement(mostraTotal, 'h1', formatarDinheiro(Total))
-  display.appendChild(mostraTotal)
-}
-
-bancadaComDoisLados()
-
-{
-  /* <table class="table table-striped table-bordered tabela">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Item</th>
-          <th scope="col">Material</th>
-          <th scope="col">Descrição</th>
-          <th scope="col">QT</th>
-          <th scope="col">Comprimento</th>
-          <th scope="col">Largura</th>
-          <th scope="col">Área</th>
-          <th scope="col">Preço/m²</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Acabamento</th>
-          <th scope="col">QT</th>
-          <th scope="col">Preço/ml</th>
-          <th scope="col">Valor</th>
-          <th scope="col">Total</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>GRANITO PRETO SÃO GABRIEL</td>
-          <td> <strong>BANCADA DA PIA </strong></td>
-          <td>1</td>
-          <td>2,00</td>
-          <td>0,60</td>
-          <td>1,20</td>
-          <td>R$ 610,00</td>
-          <td>R$ 732,00</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>R$ 732,0 0</td>
-        </tr> */
+  tabelaOrcamento.appendChild(mostraTotal)
+  display.appendChild(tabelaOrcamento)
 }
